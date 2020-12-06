@@ -1,10 +1,13 @@
-INAME:=terfno/slack-status-updater
-TAG:=latest
+INAME:=node
+TAG:=14.15.1-alpine3.10
 CNAME:=slack-status-updater
 CONTAINER_ENGINE:=docker
 
 podman.%:
 	@$(MAKE) $* CONTAINER_ENGINE="podman"
+
+init:
+	@${CONTAINER_ENGINE} pull ${INAME}:${TAG}
 
 build:
 	@${CONTAINER_ENGINE} build -t '${INAME}:${TAG}' .
