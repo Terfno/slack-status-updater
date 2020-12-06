@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Terfno/slack-status-updater/issues"
   },
-  "homepage": "https://github.com/Terfno/slack-status-updater#readme"
+  "homepage": "https://github.com/Terfno/slack-status-updater#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "keypress": "^0.2.1",
+    "request": "^2.88.2"
+  }
 }
