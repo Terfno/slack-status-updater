@@ -7,13 +7,14 @@ podman.%:
 	@$(MAKE) $* CONTAINER_ENGINE="podman"
 
 init:
-	@${CONTAINER_ENGINE} pull ${INAME}:${TAG}
+	@${CONTAINER_ENGINE} pull ${INAME}:${TAG} &&\
+	cp .env.example .env
 
 build:
 	@${CONTAINER_ENGINE} build -t '${INAME}:${TAG}' .
 
 run:
-	@${CONTAINER_ENGINE} run -v ${PWD}:/work -w /work --name ${CNAME} -itd ${INAME}:${TAG} sh
+	@${CONTAINER_ENGINE} run --rm -v ${PWD}:/work -w /work --name ${CNAME} -itd ${INAME}:${TAG} sh
 
 exec:
 	@${CONTAINER_ENGINE} exec -it ${CNAME} sh
