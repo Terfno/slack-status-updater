@@ -32,8 +32,8 @@ let setStatus = (token, text, emoji, expiration) => {
 
 let main = () => {
   new Date()
-  let hour8 = Date.now() / 1000 + 8 * 60 * 60;
-  let hour4 = Date.now() / 1000 + 4 * 60 * 60
+  let hour8 = Date.now() / 1000 + 8 * 60 * 60 * 60;
+  let hour4 = Date.now() / 1000 + 4 * 60 * 60 * 60;
 
   process.stdin.on('keypress', (ch, key) => {
     if (key && key.ctrl && key.name == 'c') {
